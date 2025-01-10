@@ -95,3 +95,8 @@ document.querySelector(".add-task").addEventListener("click", addTask);
 
 // Renderizar as tarefas ao carregar a página
 renderTasks();
+
+// impressão da página
+function printPage() {
+  window.print();
+}

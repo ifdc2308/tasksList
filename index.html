@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/906/906334.png" type="image/png" />
     <title>Lista de Tarefas Diárias</title>
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
     <section class="task-section">
         <h1>Minhas tarefas</h1>
-        <h2 class="add-task"><img src="./assets/list.svg" class="icon-check" />Adicionar uma tarefa</h2>
-
+        <div class="container">
+            <h2 class="add-task"><img src="./assets/list.svg" class="icon-check" />Adicionar uma tarefa</h2>
+            <img src="./assets/print.svg" class="icon-check" onclick="printPage()" />
+        </div>
         <ul id="task-list" class="task-list">
             <!-- lista de tasks -->
         </ul>
