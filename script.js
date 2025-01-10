@@ -27,9 +27,9 @@ function renderTasks() {
     listItem.innerHTML = `
     <span class="task-title">${task.title}</span>
     <div class="task-icons">
-        <img src="/assets/edit.svg" class="icon-edit" title="Editar tarefa" onclick="editTask(${task.id})" />
-        <img src="/assets/delete.svg" class="icon-delete" title="Remover tarefa" onclick="deleteTask(${task.id})" />
-        <img src="/assets/check.svg" class="icon-check" title="Marcar como finalizada" onclick="toggleTaskStatus(${task.id})" />
+        <img src="./assets/edit.svg" class="icon-edit" title="Editar tarefa" onclick="editTask(${task.id})" />
+        <img src="./assets/delete.svg" class="icon-delete" title="Remover tarefa" onclick="deleteTask(${task.id})" />
+        <img src="./assets/check.svg" class="icon-check" title="Marcar como finalizada" onclick="toggleTaskStatus(${task.id})" />
     </div>
 `;
 
