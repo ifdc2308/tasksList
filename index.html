@@ -11,14 +11,31 @@
 
 <body>
     <section class="task-section">
-        <h1>Minhas tarefas</h1>
+        <h1>Tarefas diárias</h1>
         <div class="container">
-            <h2 class="add-task"><img src="./assets/list.svg" class="icon-check" />Adicionar uma tarefa</h2>
-            <img src="./assets/print.svg" class="icon-check" onclick="printPage()" />
+            <div class="content-titles">
+                <h2 class="add-task"><img src="./assets/list.svg" class="icon-check" />Adicionar uma tarefa</h2>
+                <img src="./assets/print.svg" class="icon-check" onclick="printPage()" />
+            </div>
+            <div class="content-titles">
+                <img src="./assets/clock.svg" class="icon-check" />
+                <h3 id="hour-date"></h3>
+            </div>
         </div>
-        <ul id="task-list" class="task-list">
-            <!-- lista de tasks -->
-        </ul>
+        <div class="grid-container">
+            <div>
+                <h2 class="title-columns">A fazer</h2>
+                <ul id="task-list" class="task-list">
+                    <!-- lista de tasks -->
+                </ul>
+            </div>
+              <div>
+                 <h2 class="title-columns">Finalizadas</h2>
+               <ul id="task-list-finish" class="task-list-finish">
+                    <!-- lista de tasks finalizadas -->
+                </ul>
+            </div>
+        </div>
     </section>
     <script src="script.js"></script>
 </body>

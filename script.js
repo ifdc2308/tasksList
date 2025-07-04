@@ -11,31 +11,37 @@ function saveTasks(tasks) {
 // Função para renderizar as tarefas na tela
 function renderTasks() {
   const taskList = document.getElementById("task-list");
-  taskList.innerHTML = ""; // Limpa a lista antes de renderizar novamente
+  const taskListFinish = document.getElementById("task-list-finish");
+
+  taskList.innerHTML = ""; // Limpa a lista de tarefas em aberto
+  taskListFinish.innerHTML = ""; // Limpa a lista de tarefas finalizadas
+
   const tasks = loadTasks();
 
   tasks.forEach((task) => {
     const listItem = document.createElement("li");
     listItem.className = "task-item";
 
-    // Estilo para tarefas finalizadas
-    if (task.status === "finalizada") {
-      listItem.style.textDecoration = "line-through";
-    }
-
     // Conteúdo da tarefa
     listItem.innerHTML = `
-    <span class="task-title">${task.title}</span>
-    <div class="task-icons">
-        <img src="./assets/edit.svg" class="icon-edit" title="Editar tarefa" onclick="editTask(${task.id})" />
-        <img src="./assets/delete.svg" class="icon-delete" title="Remover tarefa" onclick="deleteTask(${task.id})" />
-        <img src="./assets/check.svg" class="icon-check" title="Marcar como finalizada" onclick="toggleTaskStatus(${task.id})" />
-    </div>
-`;
+      <span class="task-title">${task.title}</span>
+      <div class="task-icons">
+          <img src="./assets/edit.svg" class="icon-edit" title="Editar tarefa" onclick="editTask(${task.id})" />
+          <img src="./assets/delete.svg" class="icon-delete" title="Remover tarefa" onclick="deleteTask(${task.id})" />
+          <img src="./assets/check.svg" class="icon-check" title="Marcar como finalizada" onclick="toggleTaskStatus(${task.id})" />
+      </div>
+    `;
 
-    taskList.appendChild(listItem);
+    // Verifica o status da tarefa e adiciona na lista correta
+    if (task.status === "finalizada") {
+      listItem.style.textDecoration = "line-through";
+      taskListFinish.appendChild(listItem);
+    } else {
+      taskList.appendChild(listItem);
+    }
   });
 }
+
 
 // Função para adicionar uma nova tarefa
 function addTask() {
@@ -100,3 +106,24 @@ renderTasks();
 function printPage() {
   window.print();
 }
+
+//relogio de data na página
+function updateClock() {
+  const now = new Date();
+  const formattedDate = now.toLocaleString('pt-BR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+
+  document.getElementById("hour-date").innerText = formattedDate;
+}
+
+// Atualiza o relógio a cada segundo
+setInterval(updateClock, 1000);
+
+// Chama a primeira vez ao carregar
+updateClock();

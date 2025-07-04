@@ -17,9 +17,19 @@
   .container {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 30px;
   }
-
+  .content-titles {    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+.title-columns {
+  font-size: 20px;
+  color: #003780;
+}
   .add-task {
     font-size: 18px;
     font-weight: 500;
@@ -44,8 +54,21 @@
     margin-inline: 2px;
   }
 
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
   /* Estilo para a lista */
   .task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+    align-items: flex-start;
+  }
+  .task-list-finish {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -91,4 +114,15 @@
     height: 20px;
     cursor: pointer;
   }
+
+ @media(max-width: 768px) {
+    .container {
+      flex-direction: column;
+      gap: 0;
+    }
+    .grid-container {
+    display: flex;
+    flex-direction: column;
+    }
+ }
 
