@@ -127,3 +127,20 @@ setInterval(updateClock, 1000);
 
 // Chama a primeira vez ao carregar
 updateClock();
+
+//função resumo de quantidade de tarefas
+function percentTasks() {
+  const tasks = loadTasks();
+
+  const tasksOpen = tasks.filter((task) => task.status === "em aberto");
+  const tasksFinished = tasks.filter((task) => task.status === "finalizada");
+
+  //total de tarefas
+  const totalTasks = tasksOpen.length + tasksFinished.length;
+
+  const percentage =totalTasks === 0 ? 0 : Math.round(tasksFinished.length / totalTasks * 100);
+
+  document.getElementById("percent-tasks").innerText = `${percentage}% das tarefas concluídas`;
+}
+
+percentTasks();

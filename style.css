@@ -115,6 +115,17 @@
     cursor: pointer;
   }
 
+  .percent-tasks {
+    position:absolute;
+    bottom: 0;
+    font-size: 14px;
+    font-weight:lighter;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    color: rgb(54, 54, 54);
+  }
+
  @media(max-width: 768px) {
     .container {
       flex-direction: column;
