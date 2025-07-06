@@ -56,6 +56,7 @@ function addTask() {
     tasks.push(newTask);
     saveTasks(tasks);
     renderTasks();
+    percentTasks();
   }
 }
 
@@ -82,6 +83,7 @@ function deleteTask(taskId) {
   const updatedTasks = tasks.filter((task) => task.id !== taskId);
   saveTasks(updatedTasks);
   renderTasks();
+  percentTasks();
 }
 
 // Função para alternar o status de uma tarefa
@@ -93,6 +95,7 @@ function toggleTaskStatus(taskId) {
       tasks[taskIndex].status === "em aberto" ? "finalizada" : "em aberto";
     saveTasks(tasks);
     renderTasks();
+    percentTasks();
   }
 }
 
